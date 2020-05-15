@@ -46,4 +46,12 @@ public class JDBCDriver {
 		return r;
 	}
 	
+	static void close() {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

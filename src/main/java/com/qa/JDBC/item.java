@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class item {
+	
 	int product_ID;
 	String name;
 	Double price;
@@ -35,6 +36,12 @@ public class item {
 			e.printStackTrace();
 		}
 		return new item(product_IDtemp, nametemp, pricetemp, stocktemp);
+	}
+	
+	public void insertSelf() {
+		String query = "INSERT INTO item VALUES("+this.product_ID+",'"+this.name
+				+"',"+this.price+","+this.stock+")";
+		JDBCDriver.exUpdate(query);
 	}
 	
 }
